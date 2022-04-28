@@ -1,0 +1,17 @@
+extends layout 
+
+block content 
+    div.m-4
+        h1= title 
+        ul 
+            each product_1 in list_product 
+                li 
+                    a(href=product_1.category.url) #{product_1.category.name} 
+                        ul 
+                            each product in list_product 
+                                if(product_1.category.name==product.category.name)
+                                    li 
+                                        a(href=product.url) #{product.name} 
+
+            else 
+                li There are no Products

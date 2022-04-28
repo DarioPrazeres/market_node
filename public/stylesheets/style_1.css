@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header{
+    color: rgb(165, 143, 143);    
+    display: flex; 
+    flex-direction: column;  
+    position: relative; 
+    height: 70px;
+}
+.close{
+    border: none;
+    position: relative;
+    padding: 0px;
+
+}
+.close-btn{
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    width: 80%;
+    height: 265px;
+    position: absolute;
+    top: 45px;
+    right: 0px;
+    background-color: rgb(255, 255, 255);
+    display: none;    
+}
+ul li a{
+    text-decoration: none;
+    color: rgb(102, 164, 226);
+    font-size: 20px;
+   
+}
+ul li{
+    padding: 5px;
+    height: 50px;
+    width: 100%;
+    border-bottom: solid 1px rgb(199, 202, 206);
+    color: white;
+}
+ul {
+    text-decoration: none;
+    text-transform: none;
+    list-style-type: none;
+    overflow: hidden;
+    width: 100%;
+}
+.btn{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-image: url(../images/menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #212529;
+}
+
+@media only screen and (min-width: 768px){
+    ul {
+        display: flex;
+        background-color: none;
+    } 
+    ul li{
+        background-color: #212529;
+        border: none; 
+        width: 150px;
+        
+    }
+    ul li a{
+        padding: 5px;
+        margin: 5px;
+        background-color: none;
+    } 
+    nav{
+        width: 50%;
+        right: 5px;
+        top: -10px;
+        display: block;
+        background-color: #212529;        
+        height: 45px;
+        margin: 0px;
+    }
+    .btn, .close{
+    display: none;
+    }
+    header{
+        height: 60px;
+        flex-direction: row;
+        justify-content: baseline;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+    .header{
+        width: 30%;
+    }
+    .logo{
+        margin-left: 20px;
+    }
+}
+

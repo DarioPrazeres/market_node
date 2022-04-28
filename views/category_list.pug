@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    div.m-4
+        h1= title 
+
+        ul 
+            each category in category_list 
+                li 
+                    a(href=category.url) #{category.name} 
+
+            else 
+                li There are no Category  

@@ -1,0 +1,42 @@
+extends layout 
+
+block content
+    div.m-4
+        h1= title 
+
+        form(action="", method="POST") 
+            div.form-group 
+                label(for='Name') Name: 
+                input#name.form-control(type="text", placeholder='Name Of Product' name="name" required='true' value=(undefined===product ? '' :product.name)) 
+            div.form-group
+                label(for='category') category:
+                select#category.form-control(type='select' placeholder='Select category' name='category' required='true' )
+                    - categorys.sort(function(a) {let textA = a.name.toUpperCase();});
+                    for category in categorys
+                        if book
+                            //- Handle GET form, where book.category is an object, and POST form, where it is a string.
+                            option(
+                                value=category._id
+                                selected=(
+                                    category._id.toString()==book.category._id
+                                    || category._id.toString()==book.category
+                                ) ? 'selected' : false
+                            ) #{category.name}
+                        else
+                            option(value=category._id) #{category.name}
+            div.form-group 
+                label(for='disc') Discription: 
+                textarea#disc.form-control( type='textarea',name="disc", placeholder='Dicription Of Product', required='true') #{undefined===product ? '' : product.disc} 
+            div.form-group 
+                label(for='qtd') Quatity: 
+                input#qtd.form-control(type="number", placeholder='Quatity Of Product' name="qtd" required='true' value=(undefined===product ? 0 :product.qtd)) 
+            div.form-group 
+                label(for="price") Price: 
+                input#price.form-control(type="number", name="price", placeholder='Price Of Product', required='true' value=(undefined===product ? 0: product.price)) 
+            
+            button.btn.btn-primary(type='submit') Submit 
+
+        if errors
+            ul
+                for error in errors
+                    li!= error.msg

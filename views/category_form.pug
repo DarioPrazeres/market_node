@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+    section.category
+        div.category-bg
+            h1 #{title} 
+            form.category-form(action="", method="post") 
+                div.form-group 
+                    label(for="name") Category:  
+                    input#name.form-control.m-1(type="text",placeholder='Vegetables' name="name" value=(undefined===category? '':category.name))
+                    button.btn.btn-primary.btn-submit(type="submit") Submit 
+    
+            if errors 
+                ul 
+                    for error in errors 
+                        li!= errors.msg
