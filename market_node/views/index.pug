@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class='bg')
+    div(class='banner') 
+      div
+        h1 Josefa SuperMarket 
+        h5 Where you have found everthing and more.
+  div.b-list
+    ul.bg-d
+      each list_c in list
+        li 
+          div.list-index
+            a(href=list_c.url) #{list_c.name} 
+ 

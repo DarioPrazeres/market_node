@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    script(src="javascripts/bootstrap.js" defer) 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  body
+    nav(class="navbar navbar-expand " aria-label="Third navbar example") 
+      div(class='container-fluid')
+        a(href="/" class='navbar-brand')
+          img(src="/images/logo.png", alt="" class='logo')
+        div(class="collapse navbar-collapse" id="navbarsExample03")
+          ul(class='navbar-nav me-auto mb-2 mb-sm-0') 
+            li(class='nav-item dropdown')
+              button.btn(class="nav-link dropdown-toggle"  id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false") Menu
+              ul(class="dropdown-menu" aria-labelledby="dropdown03") Products
+                li 
+                  a(class="dropdown-item" href="/invetory/products") All
+                li 
+                  a(class="dropdown-item" href="/invetory/products/create") New
+                li Category
+                  a(class="dropdown-item" href="/invetory/categories") All
+                li 
+                  a(class="dropdown-item" href="/invetory/categories/create") New
+
+    div  
+      block content
+  footer 
+    p Copyright #[ DPproject]      

@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+    div.m-4 
+        h1 #{title}: #{product.name} 
+
+        p #[strong Category:] 
+            a(href=product.category.url) #{product.category.name} 
+        p #[strong Discription:] #{product.disc} 
+        p #[strong Price:] #{product.price} $US
+        if(product.qtd == 1)
+            p #[strong Qt:] #{product.qtd} Unity
+        else 
+            p #[strong Qt:] #{product.qtd} Unities 
+
+        p Do you really want to delete this Category? 
+            
+        form(action='', method="POST") 
+            div.form-group 
+                input#productid.from-control(type="hidden", name='productid', required='true', value=product.id) 
+
+                button.btn.btn-primary(type="submit") Delete

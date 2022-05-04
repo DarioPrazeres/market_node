@@ -3,13 +3,22 @@ var Category = require('../models/category');
 var async = require('async');
 const {body, validationResult} = require('express-validator')
 exports.product_list = function(req, res, next){
-    Product.find({}, 'name category')
-    .sort({name: 1})
-    .populate('category')
-    .exec(function(err, list_products){
+    async.parallel({
+        product: function(callback){
+            Product.find({}, 'name category').populate('category').exec(callback);
+        },
+        category: function(callback){
+            Category.find(callback);
+        },
+    }, function(err, results){
         if(err){return next(err);}
-        res.render('product_list', {title: 'Product List', list_product: list_products})
-    })
+        if(results.product == null){
+            var err = new Error('Product Not Found');
+            err.status = 404;
+            return next(err); 
+        }
+        res.render('product_list', {title: 'Product List', list_category: results.category, list_product: results.product});
+    });
 }
 exports.product_detail = function(req, res, next){
    async.parallel({
