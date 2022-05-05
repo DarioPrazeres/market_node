@@ -6,6 +6,10 @@ block content
       div
         h1 Josefa SuperMarket 
         h5 Where you have found everthing and more.
-  div(class='bg-d')
-    p tafdjdjdg 
+  div.b-list
+    ul.bg-d
+      each list_c in list
+        li 
+          div.list-index
+            a(href=list_c.url) #{list_c.name} 
  
