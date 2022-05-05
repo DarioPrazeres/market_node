@@ -5,7 +5,7 @@ var helmet = require('helmet');
 const bodyParser = require('body-parser')
 //Conect mongoDB and Mongoose 'mongodb+srv://m001-student:m001-mongodb-basics@cluster0.0cgbl.mongodb.net/Library?retryWrites=true&w=majority' //'mongodb://127.0.0.1/library';//
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/market';//'mongodb+srv://DarioPrazeres:Fernandes1973@cluster0.xvrcp.mongodb.net/market?retryWrites=true&w=majority'; //'mongodb+srv://m001-student:m001-mongodb-basics@cluster0.0cgbl.mongodb.net/Market?retryWrites=true&w=majority';//mongodb+srv://DarioPrazeres:Fernandes1973@cluster0.xvrcp.mongodb.net/market?retryWrites=true&w=majority
+var mongoDB = 'mongodb+srv://DarioPrazeres:Fernandes1973@cluster0.xvrcp.mongodb.net/market?retryWrites=true&w=majority'; //'mongodb+srv://m001-student:m001-mongodb-basics@cluster0.0cgbl.mongodb.net/Market?retryWrites=true&w=majority';//mongodb+srv://DarioPrazeres:Fernandes1973@cluster0.xvrcp.mongodb.net/market?retryWrites=true&w=majority
 mongoose.connect(mongoDB, {useNewUrlParser:true});                                                                     
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB conection error:')); 
