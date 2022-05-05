@@ -11,11 +11,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://sheltered-ravine-33613.herokuapp.com/">
+    <a href="https://polar-harbor-11338.herokuapp.com/">
       Demo
     </a>
     <span> | </span>
-    <a href="//github.com/DarioPrazeres/local_library_mdn
+    <a href="//github.com/DarioPrazeres/market_node
 ">
       Solution
     </a>
