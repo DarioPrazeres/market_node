@@ -1,17 +1,18 @@
 extends layout 
 
 block content 
-    div.m-4
-        h1= title 
-        ul 
-            each product_1 in list_product 
-                li 
-                    a(href=product_1.category.url) #{product_1.category.name} 
-                        ul 
-                            each product in list_product 
-                                if(product_1.category.name==product.category.name)
-                                    li 
-                                        a(href=product.url) #{product.name} 
-
-            else 
-                li There are no Products
+    h1.tit= title 
+    div.m-4.product
+        div   
+            ul 
+                each list_c in list_category 
+                    li.m-2
+                            div.proName
+                                a(href=list_c.url) #{list_c.name} 
+                            ul.produ
+                                each product in list_product 
+                                    if(list_c.name==product.category.name)
+                                        li 
+                                            a(href=product.url) #{product.name} 
+                else 
+                    li There are no Products

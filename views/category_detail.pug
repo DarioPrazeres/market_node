@@ -1,20 +1,21 @@
 extends layout 
 
 block content 
-    div.m-4
+    div.m-4.detail
         h1 Category: #{category.name} 
-        div
-            h4 Products 
-            dl 
+        h4 Products 
+        div          
+            dl.grid 
                 each product in category_products 
                     dt 
-                        a(href=product.url) #{product.name} 
+                        div.name
+                            a(href=product.url) #{product.name} 
                         p Price: #{product.price}
-                        p QTD: #{product.qtd}
+                        p Qtd: #{product.qtd}
                         p Disc: #{product.disc}
                 else 
                     p This Category has not Product 
         p 
-            a(href=category.url+'/delete') Delete Category 
+            a.btn.btn-danger(href=category.url+'/delete') Delete Category 
         p 
-            a(href=category.url+'/update') Update Category  
+            a.btn.btn-dark(href=category.url+'/update') Update Category  
