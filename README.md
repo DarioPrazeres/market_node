@@ -1,9 +1,8 @@
 # market_node
-# local_library_mdn
 
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Local library</h1>
+<h1 align="center">Market with Node</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="theodinproject.com" target="_blank">The Odin Project</a>.
@@ -40,7 +39,7 @@
 
 ## Overview
 
-<img src='https://github.com/DarioPrazeres/local_library_mdn/blob/main/public/images/banner.png'>
+<img src='https://github.com/DarioPrazeres/market_node/blob/main/public/images/project.png'>
 
 <p>This a copy of MDN tutorial. This project is a Libray where you have acess to Create, Read, Update and Delete. This ptroject help me undeertand concept as CRUD and MVC (Model, View and Control) </p>
 <p>The user can create Book, Author, Genre and Book instance.</p>
